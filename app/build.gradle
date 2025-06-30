@@ -65,4 +65,8 @@ dependencies {
     implementation 'com.anythink.sdk:interstitial-tpn:6.4.85'
     //implementation 'com.anythink.sdk:rewardedvideo-tpn:6.4.85'
     //implementation 'com.anythink.sdk:splash-tpn:6.4.85'
+
+    //implementation('com.facebook.android:audience-network-sdk:6.20.0')
+    implementation('com.facebook.android:facebook-android-sdk:16.3.0')
+
 }

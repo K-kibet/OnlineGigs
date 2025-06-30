@@ -1,12 +1,17 @@
 package com.kernelapps.onlinejobz.activities;
 
+import static com.anythink.network.adx.AdxATConst.DEBUGGER_CONFIG.Adx_NETWORK;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ProgressBar;
 
+import com.anythink.core.api.ATDebuggerConfig;
 import com.anythink.core.api.ATSDK;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 import com.kernelapps.onlinejobz.BaseActivity;
 import com.kernelapps.onlinejobz.R;
 import com.kernelapps.onlinejobz.utils.AdsManager;
@@ -27,6 +32,10 @@ public class SplashActivity extends BaseActivity {
         ATSDK.init(this, getString(R.string.TOPON_APP_ID), getString(R.string.TOPON_APP_KEY));
         //AdsManager.initializeTopOn(this);
         ATSDK.setNetworkLogDebug(true);
+
+        FacebookSdk.sdkInitialize(this);
+        AppEventsLogger.activateApp(getApplication());
+        //ATSDK.setDebuggerConfig(this,"825cfd32-9526-4faa-a95a-1235291307fa" , new ATDebuggerConfig.Builder(Adx_NETWORK).build());
 
         AdsManager.showInterstitialAd(this);
 
