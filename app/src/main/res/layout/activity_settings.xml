@@ -15,7 +15,7 @@
         android:id="@+id/themeRadioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:paddingHorizontal="10dp"
         android:layout_below="@id/toolbar">
 
         <RadioButton
@@ -36,14 +36,21 @@
             android:layout_height="wrap_content"
             android:text="Dark Theme" />
     </RadioGroup>
-
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="12dp"
+        android:background="?attr/dashBackground"
+        android:layout_below="@id/themeRadioGroup"/>
     <!-- Notification Preferences -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp"
-        android:layout_below="@id/themeRadioGroup">
+        android:paddingHorizontal="10dp"
+        android:layout_below="@id/divider">
 
         <CheckBox
             android:id="@+id/pushNotificationsCheckBox"

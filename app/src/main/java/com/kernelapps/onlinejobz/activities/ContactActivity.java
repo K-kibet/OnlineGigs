@@ -9,10 +9,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
+import com.anythink.nativead.api.ATNativeAdView;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.kernelapps.onlinejobz.BaseActivity;
 import com.kernelapps.onlinejobz.R;
 import com.kernelapps.onlinejobz.utils.AdsManager;
+import com.kernelapps.onlinejobz.utils.NativeAdManager;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,10 +41,6 @@ public class ContactActivity extends BaseActivity {
         messageEditText = findViewById(R.id.textMessage);
         Button sendButton = findViewById(R.id.btnSend);
 
-        // Load ads
-        FrameLayout bannerContainer = findViewById(R.id.bannerContainer);
-        AdsManager.loadAndShowBanner(this, bannerContainer);
-
         // Set click listener for send button
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +48,11 @@ public class ContactActivity extends BaseActivity {
                 sendDataToFirestore();
             }
         });
+
+        ATNativeAdView adContainer = findViewById(R.id.native_ad_view);
+        NativeAdManager adManager = new NativeAdManager(this, adContainer);
+
+        adManager.loadAd();
 
     }
 

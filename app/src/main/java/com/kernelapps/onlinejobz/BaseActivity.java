@@ -3,6 +3,8 @@ package com.kernelapps.onlinejobz;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +12,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.preference.PreferenceManager;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.kernelapps.onlinejobz.utils.AdsManager;
 
 public class BaseActivity extends AppCompatActivity {
@@ -86,6 +89,27 @@ public class BaseActivity extends AppCompatActivity {
     protected void onToolbarBackPressed() {
         AdsManager.showInterstitialAd(this);
         finish();
+    }
+
+    protected void showExitBottomSheet() {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        View sheetView = getLayoutInflater().inflate(R.layout.exit_bottom_sheet, null, false);
+
+        bottomSheetDialog.setContentView(sheetView);
+
+        Button btnYes = sheetView.findViewById(R.id.btnExitYes);
+        Button btnNo = sheetView.findViewById(R.id.btnExitNo);
+
+        btnYes.setOnClickListener(v -> {
+            bottomSheetDialog.dismiss();
+            finish(); // Close the app
+        });
+
+        btnNo.setOnClickListener(v -> {
+            bottomSheetDialog.dismiss();
+        });
+
+        bottomSheetDialog.show();
     }
 
     // Called when toolbar back (up) button is pressed

@@ -30,7 +30,13 @@
     <string name="TOPON_APP_KEY">a186f91c734e4318e1ccd3423f7ca138f</string>
     <string name="INTERSTITIAL_PLACEMENT_ID">n68249f0d4ac44</string>
     <string name="BANNER_PLACEMENT_ID">n68249f0e2d6ad</string>
+    <string name="NATIVE_PLACEMENT_ID">"n68249f0dcb7d6"</string>
     <string name="FACEBOOK_APP_ID">1397785331270145</string>//647641511046117//24154925827448323
-    <string name="FACEBOOK_TOKEN">3bb8c849ca524db59fc1a0e459e1403e</string>//794eb1d547ee1a7d5b691f092dc23b08
+    <string name="FACEBOOK_TOKEN">3bb8c849ca524db59fc1a0e459e1403e</string>
+    //794eb1d547ee1a7d5b691f092dc23b08
 
+
+    <string name="sponsored_content">Sponsored</string>
+    <string name="ad_choices">Ad choices</string>
+    <string name="close_ad">Close ad</string>
 </resources>

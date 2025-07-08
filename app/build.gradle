@@ -60,7 +60,7 @@ dependencies {
 
     // AnyThink SDK with exclusions
     implementation 'com.anythink.sdk:core-tpn:6.4.85'
-    //implementation 'com.anythink.sdk:nativead-tpn:6.4.85'
+    implementation 'com.anythink.sdk:nativead-tpn:6.4.85'
     implementation 'com.anythink.sdk:banner-tpn:6.4.85'
     implementation 'com.anythink.sdk:interstitial-tpn:6.4.85'
     //implementation 'com.anythink.sdk:rewardedvideo-tpn:6.4.85'

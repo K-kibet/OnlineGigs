@@ -37,7 +37,6 @@ public class SplashActivity extends BaseActivity {
         AppEventsLogger.activateApp(getApplication());
         //ATSDK.setDebuggerConfig(this,"825cfd32-9526-4faa-a95a-1235291307fa" , new ATDebuggerConfig.Builder(Adx_NETWORK).build());
 
-        AdsManager.showInterstitialAd(this);
 
         new Thread(() -> {
             try {
@@ -53,6 +52,7 @@ public class SplashActivity extends BaseActivity {
                     Intent intent = new Intent(SplashActivity.this, WalkthroughActivity.class);
                     startActivity(intent);
                     finish();
+                    AdsManager.showInterstitialAd(this);
                 });
 
             } catch (InterruptedException e) {

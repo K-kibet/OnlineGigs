@@ -7,11 +7,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.anythink.nativead.api.ATNativeAdView;
 import com.kernelapps.onlinejobz.BaseActivity;
 import com.kernelapps.onlinejobz.R;
 import com.kernelapps.onlinejobz.adapters.FAQAdapter;
 import com.kernelapps.onlinejobz.models.FAQ;
 import com.kernelapps.onlinejobz.utils.AdsManager;
+import com.kernelapps.onlinejobz.utils.NativeAdManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +49,13 @@ public class FaqActivity extends BaseActivity {
         recyclerView.setAdapter(adapter);
 
         // Load ads
-        FrameLayout bannerContainer = findViewById(R.id.bannerContainer);
-        AdsManager.loadAndShowBanner(this, bannerContainer);
+        //FrameLayout bannerContainer = findViewById(R.id.bannerContainer);
+        //AdsManager.loadAndShowBanner(this, bannerContainer);
+        // In your Activity/Fragment:
+        ATNativeAdView adContainer = findViewById(R.id.native_ad_view);
+        NativeAdManager adManager = new NativeAdManager(this, adContainer);
+
+        // Simply load the ad - all listeners are internal
+        adManager.loadAd();
     }
 }

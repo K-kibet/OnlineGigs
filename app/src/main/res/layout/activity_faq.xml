@@ -13,9 +13,9 @@
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
         tools:listitem="@layout/item_faq"
-        android:layout_above="@id/bannerContainer"/>
-    <FrameLayout
-        android:id="@+id/bannerContainer"
+        android:layout_above="@id/native_ad_view"/>
+    <com.anythink.nativead.api.ATNativeAdView
+        android:id="@+id/native_ad_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"/>

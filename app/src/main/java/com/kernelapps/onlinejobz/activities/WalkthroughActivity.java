@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -32,7 +33,7 @@ public class WalkthroughActivity extends BaseActivity {
 
         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         if (prefs.getBoolean("isWalkthroughShown", false)) {
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, StartActivity.class));
             finish();
             return;
         }
@@ -76,6 +77,13 @@ public class WalkthroughActivity extends BaseActivity {
 
         FrameLayout bannerContainer = findViewById(R.id.bannerContainer);
         AdsManager.loadAndShowBanner(this, bannerContainer);
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                showExitBottomSheet();
+            }
+        });
     }
 
     private void setupIndicators(int count) {
@@ -115,7 +123,7 @@ public class WalkthroughActivity extends BaseActivity {
         SharedPreferences.Editor editor = getSharedPreferences("MyPrefs", MODE_PRIVATE).edit();
         editor.putBoolean("isWalkthroughShown", true);
         editor.apply();
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, StartActivity.class));
         AdsManager.showInterstitialAd(this);
         finish();
     }

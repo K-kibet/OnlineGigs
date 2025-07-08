@@ -1,5 +1,6 @@
 package com.kernelapps.onlinejobz;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -94,6 +95,12 @@ public class MainActivity extends BaseActivity {
             }
         }
 
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                showExitBottomSheet();
+            }
+        });
     }
 
     @SuppressLint("NonConstantResourceId")
