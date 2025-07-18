@@ -87,7 +87,7 @@ public class BaseActivity extends AppCompatActivity {
 
     // Optional: override this in subclasses if you want to handle toolbar back press
     protected void onToolbarBackPressed() {
-        AdsManager.showInterstitialAd(this);
+        //AdsManager.showInterstitialAd(this);
         finish();
     }
 
