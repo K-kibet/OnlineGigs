@@ -48,7 +48,7 @@ public class StartActivity extends BaseActivity {
         }));
         itemList.add(new StartedItem(R.drawable.round_info_24, "Frequently Asked Questions", item -> {
             startActivity(new Intent(this, FaqActivity.class));
-            AdsManager.showInterstitialAd(this);
+            //AdsManager.showInterstitialAd(this);
         }));
 
         itemList.add(new StartedItem(R.drawable.baseline_share_24, "Share App", item -> {
