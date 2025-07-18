@@ -61,7 +61,7 @@ public class MainActivity extends BaseActivity {
         toolbar.setTitle(getString(R.string.app_name));
 
         if (isFirstLaunch) {
-            AdsManager.showInterstitialAd(this);
+            //AdsManager.showInterstitialAd(this);
             isFirstLaunch = false; // prevent future triggers in the same instance
         }
 
